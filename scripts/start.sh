@@ -26,12 +26,12 @@ export PYTHONPATH="$PROJECT_DIR:$ROBONIX_PYLIB:$CODEGEN_DIR:$MCP_TYPES_DIR:${PYT
 # 2. 解析 RC Pro 地址
 # ============================================================
 if [ -n "${RBNX_CAP_CONFIG_JSON:-}" ]; then
-    RC_IP=$(python3 -c "import json,sys; c=json.loads(sys.argv[1]); print(c.get('rc_pro_ip','10.225.57.15'))" "$RBNX_CAP_CONFIG_JSON" 2>/dev/null || echo "10.225.57.15")
+    RC_IP=$(python3 -c "import json,sys; c=json.loads(sys.argv[1]); print(c.get('rc_pro_ip','172.20.10.2'))" "$RBNX_CAP_CONFIG_JSON" 2>/dev/null || echo "172.20.10.2")
     RC_PORT=$(python3 -c "import json,sys; c=json.loads(sys.argv[1]); print(c.get('rc_pro_port',8080))" "$RBNX_CAP_CONFIG_JSON" 2>/dev/null || echo "8080")
     export RC_PRO_IP="${RC_PRO_IP:-$RC_IP}"
     export RC_PRO_PORT="${RC_PRO_PORT:-$RC_PORT}"
 else
-    export RC_PRO_IP="${RC_PRO_IP:-10.225.57.15}"
+    export RC_PRO_IP="${RC_PRO_IP:-172.20.10.2}"
     export RC_PRO_PORT="${RC_PRO_PORT:-8080}"
 fi
 

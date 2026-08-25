@@ -8,7 +8,7 @@ import socket
 import sys
 from urllib.parse import urlparse
 
-RC_HOST = sys.argv[1] if len(sys.argv) > 1 else "10.225.57.15"
+RC_HOST = sys.argv[1] if len(sys.argv) > 1 else "172.20.10.2"
 RC_PORT = 8080
 PROXY_PORT = int(sys.argv[2]) if len(sys.argv) > 2 else 5500
 RC_BASE = f"http://{RC_HOST}:{RC_PORT}"
@@ -132,7 +132,7 @@ class ProxyHandler(http.server.SimpleHTTPRequestHandler):
         try:
             with open(html_path, "r", encoding="utf-8") as f:
                 html = f.read()
-            # 注入 RC Pro 地址，让视频 img 标签可以直连（img 不受 CORS 限制）
+            # 注入 RC Pro 地址，让视频 img 标签可以直连（img 不受 CORS 限制）+1
             inject = '<script>window.__RC_HOST__="%s";window.__RC_PORT__=%d;</script>\n' % (RC_HOST, RC_PORT)
             html = html.replace("<!-- ═══ Script ═══ -->", inject + "<!-- ═══ Script ═══ -->", 1)
             self.send_response(200)

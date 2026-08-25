@@ -3,7 +3,7 @@ import sys
 import json
 import requests
 
-RC_PRO = "http://10.225.57.15:8080"
+RC_PRO = "http://172.20.10.2:8080"
 
 print("=" * 60)
 print("  drone_bridge 原语验证")
@@ -27,7 +27,7 @@ print("\n[2/3] 原语映射 (CommandHandler)")
 
 from drone_bridge.main import DroneClient, CommandHandler
 
-client = DroneClient("10.225.57.15", 8080)
+client = DroneClient("172.20.10.2", 8080)
 handler = CommandHandler(client)
 
 # state（/api/status + /api/capture_gps 合并）

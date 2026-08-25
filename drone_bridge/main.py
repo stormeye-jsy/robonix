@@ -40,7 +40,7 @@ import requests
 # 配置
 # ---------------------------------------------------------------------------
 
-RC_PRO_IP = os.environ.get("RC_PRO_IP", "10.225.57.15")
+RC_PRO_IP = os.environ.get("RC_PRO_IP", "172.20.10.2")
 RC_PRO_PORT = int(os.environ.get("RC_PRO_PORT", "8080"))
 ATLAS_ENDPOINT = os.environ.get("RBNX_ATLAS_ENDPOINT", "127.0.0.1:50051")
 TELEMETRY_INTERVAL = float(os.environ.get("TELEMETRY_INTERVAL", "1.0"))  # 秒

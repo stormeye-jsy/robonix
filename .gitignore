@@ -12,3 +12,8 @@ venv/
 Thumbs.db
 .idea/
 .vscode/
+
+# RoboNIX runtime / build artifacts
+logs/
+rbnx-boot/
+rbnx-build/

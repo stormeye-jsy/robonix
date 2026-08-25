@@ -34,7 +34,7 @@ config:
   rc_pro_ip:
     description: RC Pro IP 地址 (运行 Drone_test APK)
     type: string
-    default: 10.225.57.15
+    default: 172.20.10.2
   rc_pro_port:
     description: RC Pro WebServer 端口
     type: integer

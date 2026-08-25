@@ -46,7 +46,7 @@ _client: DroneClient | None = None
 def _get_client() -> DroneClient:
     """获取已初始化的 HTTP 客户端"""
     if _client is None:
-        rc_ip = os.environ.get("RC_PRO_IP", "10.225.57.15")
+        rc_ip = os.environ.get("RC_PRO_IP", "172.20.10.2")
         rc_port = int(os.environ.get("RC_PRO_PORT", "8080"))
         return DroneClient(rc_ip, rc_port)
     return _client
