@@ -1,0 +1,10 @@
+{
+  "java.jdt.ls.java.home": "D:/Java/jdk-17",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "gradle.java.home": "D:/Java/jdk-17",
+  "gradle.nestedProjects": true,
+  "files.exclude": {
+    "**/.gradle": true,
+    "**/build": true
+  }
+}

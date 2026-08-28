@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "gradle: assembleDebug",
+      "type": "shell",
+      "command": ".\\gradlew.bat assembleDebug",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "JAVA_HOME": "D:\\Java\\jdk-17",
+          "ANDROID_HOME": "D:\\Android\\Sdk"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "adb: installDebug",
+      "type": "shell",
+      "command": "adb install -r ${workspaceFolder}\\sample\\build\\outputs\\apk\\debug\\sample-debug.apk",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "ANDROID_HOME": "D:\\Android\\Sdk"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "adb: logcat (filter DJI/app)",
+      "type": "shell",
+      "command": "adb logcat -v time | findstr /i \"dji aircraft MSDK AndroidRuntime\"",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "ANDROID_HOME": "D:\\Android\\Sdk"
+        }
+      },
+      "problemMatcher": []
+    }
+  ]
+}
